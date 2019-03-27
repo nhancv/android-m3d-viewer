@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.andresoviedo.util.android.ContentUtils;
-import org.andresoviedo.dddmodel2.R;
+import com.nhancv.m3dviewer.R;
 
 import java.io.IOException;
 import java.util.ArrayList;

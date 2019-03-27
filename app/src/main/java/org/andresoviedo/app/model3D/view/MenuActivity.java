@@ -21,7 +21,7 @@ import org.andresoviedo.util.android.AssetUtils;
 import org.andresoviedo.util.android.ContentUtils;
 import org.andresoviedo.util.android.FileUtils;
 import org.andresoviedo.util.view.TextActivity;
-import org.andresoviedo.dddmodel2.R;
+import com.nhancv.m3dviewer.R;
 
 import java.io.File;
 import java.util.HashMap;

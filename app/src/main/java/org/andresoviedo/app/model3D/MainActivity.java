@@ -8,7 +8,7 @@ import android.view.Menu;
 import org.andresoviedo.app.model3D.view.MenuActivity;
 import org.andresoviedo.app.model3D.view.ModelActivity;
 import org.andresoviedo.util.android.AndroidURLStreamHandlerFactory;
-import org.andresoviedo.dddmodel2.R;
+import com.nhancv.m3dviewer.R;
 
 import java.net.URL;
 
