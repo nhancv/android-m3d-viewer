@@ -20,8 +20,28 @@ public class AssetUtils {
         void onClick(String asset);
     }
 
-    public static void createChooserDialog(Context context, String title, CharSequence message, String folder,
+    public static AlertDialog create3DChooserDialog(Context context, String title, CharSequence message, String folder,
                                            String fileRegex, Callback callback) {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setNegativeButton("Cancel", (DialogInterface dialog, int which) -> {
+            callback.onClick(null);
+        });
+        try {
+            final String[] fileList = listFiles(context, folder, fileRegex);
+            builder.setItems(fileList, (DialogInterface dialog, int which) -> {
+                String selectedFile = fileList[which];
+                callback.onClick(folder+"/"+selectedFile);
+            });
+        } catch (IOException ex) {
+            Toast.makeText(context,"Error listing assets from "+folder, Toast.LENGTH_LONG).show();
+        }
+        return builder.create();
+    }
+
+    public static void createChooserDialog(Context context, String title, CharSequence message, String folder,
+                                                  String fileRegex, Callback callback) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(title);
         builder.setMessage(message);

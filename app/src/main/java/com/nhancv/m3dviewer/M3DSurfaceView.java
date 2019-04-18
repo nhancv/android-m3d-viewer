@@ -24,13 +24,10 @@ public class M3DSurfaceView extends RecordableSurfaceView implements RecordableS
     public M3DSurfaceView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        // Create an OpenGL ES 2.0 context.
-//        setEGLContextClientVersion(2);
         camera = new Camera();
         // This is the actual renderer of the 3D space
         renderer = new M3DRenderer(this);
         setRendererCallbacks(this);
-//        setRenderer(renderer);
     }
 
     public void setupScene(M3DSceneLoader sceneLoader) {
