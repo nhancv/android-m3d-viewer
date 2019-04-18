@@ -1,4 +1,4 @@
-package com.nhancv.facemask;
+package com.nhancv.m3dviewer;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
@@ -13,7 +13,6 @@ import org.andresoviedo.android_3d_model_engine.model.Camera;
 import org.andresoviedo.android_3d_model_engine.model.Object3D;
 import org.andresoviedo.android_3d_model_engine.model.Object3DData;
 import org.andresoviedo.android_3d_model_engine.services.Object3DBuilder;
-import org.andresoviedo.app.model3D.demo.SceneLoader;
 import org.andresoviedo.util.android.GLUtil;
 
 import java.io.ByteArrayInputStream;

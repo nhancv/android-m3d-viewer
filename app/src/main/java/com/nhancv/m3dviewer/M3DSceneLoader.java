@@ -1,8 +1,7 @@
-package com.nhancv.facemask;
+package com.nhancv.m3dviewer;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.opengl.GLSurfaceView;
 import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Toast;
@@ -16,8 +15,6 @@ import org.andresoviedo.android_3d_model_engine.services.Object3DBuilder;
 import org.andresoviedo.android_3d_model_engine.services.collada.ColladaLoaderTask;
 import org.andresoviedo.android_3d_model_engine.services.stl.STLLoaderTask;
 import org.andresoviedo.android_3d_model_engine.services.wavefront.WavefrontLoaderTask;
-import org.andresoviedo.app.model3D.view.ModelActivity;
-import org.andresoviedo.app.model3D.view.ModelRenderer;
 import org.andresoviedo.util.android.ContentUtils;
 import org.andresoviedo.util.io.IOUtils;
 

@@ -1,15 +1,11 @@
-package com.nhancv.facemask;
+package com.nhancv.m3dviewer;
 
 import android.content.Context;
-import android.opengl.GLSurfaceView;
 import android.util.AttributeSet;
 
 import org.andresoviedo.android_3d_model_engine.model.Camera;
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-
-public class M3DSurfaceView extends GLSurfaceView {
+public class M3DSurfaceView extends RecordableSurfaceView implements RecordableSurfaceView.RendererCallbacks {
 
     private M3DRenderer renderer;
 
@@ -29,18 +25,19 @@ public class M3DSurfaceView extends GLSurfaceView {
         super(context, attrs);
 
         // Create an OpenGL ES 2.0 context.
-        setEGLContextClientVersion(2);
+//        setEGLContextClientVersion(2);
         camera = new Camera();
         // This is the actual renderer of the 3D space
         renderer = new M3DRenderer(this);
-        setRenderer(renderer);
+        setRendererCallbacks(this);
+//        setRenderer(renderer);
     }
 
-    public void setupRender(M3DSceneLoader sceneLoader) {
+    public void setupScene(M3DSceneLoader sceneLoader) {
         this.scene = sceneLoader;
     }
 
-    public M3DRenderer getModelRenderer(){
+    public M3DRenderer getModelRenderer() {
         return renderer;
     }
 
@@ -54,5 +51,35 @@ public class M3DSurfaceView extends GLSurfaceView {
 
     public Camera getCamera() {
         return camera;
+    }
+
+    @Override
+    public void onSurfaceCreated() {
+        renderer.onSurfaceCreated(null, null);
+    }
+
+    @Override
+    public void onSurfaceChanged(int width, int height) {
+        renderer.onSurfaceChanged(null, width, height);
+    }
+
+    @Override
+    public void onSurfaceDestroyed() {
+
+    }
+
+    @Override
+    public void onContextCreated() {
+
+    }
+
+    @Override
+    public void onPreDrawFrame() {
+
+    }
+
+    @Override
+    public void onDrawFrame() {
+        renderer.onDrawFrame(null);
     }
 }
